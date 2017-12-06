@@ -11,7 +11,7 @@ generate time_t0=time/t0
 capture program drop nlmynlmodel
 
 
-//write your -nl- program (here: 6 parameters to be estimated) 
+//Part1: write your -nl- program (here: 6 parameters to be estimated) 
 program nlmynlmodel, rclass
 version 13
 local capterm "({pi})*((k_k0)*(exp({gammak}*t0/{lambdak}*((time_t0)^{lambdak}-1))))^((exp(ln({sigma}))-1)/exp(ln({sigma})))"
@@ -21,7 +21,7 @@ return local eq "lnyy0 = ln({a})+`term2'"
 end
 
 
-//define grid of starting values: a vector for each parameter
+//Part2: define grid of starting values: a vector for each parameter
 matrix vpi=(0.25,0.3,0.35)
 matrix vsigma=(0.5,0.6,0.7,0.8,0.9,1.1,1.2)
 matrix vgammal=(0.01,0.015,0.02)
@@ -30,7 +30,7 @@ matrix vgammak=(-0.001,0.0001,0.001)
 matrix vlambdak=(-1, 0.001,1)
 
 
-//get SSR for all combinations and remember those starting values that led to the lowest SSR
+//Part3: get SSR for all combinations and remember those starting values that led to the lowest SSR
 local minssr=.
 forv x= 1/3 {
 local spi`x'=vpi[1,`x']
@@ -45,7 +45,7 @@ local spi`x'=vpi[1,`x']
 						forv n=1/3 {
 						local slambdak`n'=vlambdak[1,`n']
 							capture nl mynlmodel:lnyy0 l_l0 k_k0 time_t0 t0 ///
-							, initial(pi `spi`x'' sigma `ssigma`i'' gammal `sgammal`j'' a `sa`k'' gammak `sgammak`m'' lambdak `slambdak`n'')  vce(r) iterate(1)					
+							, initial(pi `spi`x'' sigma `ssigma`i'' gammal `sgammal`j'' a `sa`k'' gammak `sgammak`m'' lambdak `slambdak`n'')  vce(r) iterate(20)					
 							if e(rss)<`minssr' {
 							display "The lowest SSR is currently" e(rss)
 							local bestpi = `spi`x''
@@ -64,12 +64,12 @@ local spi`x'=vpi[1,`x']
 }
 	
 
-//estimate nl-program for chosen set of starting values
+//Part4: estimate nl-program for chosen set of starting values
 display "Chosen starting vsigmalues: pi=`bestpi', sigma=`bestsigma', gammal=`bestgammal', a=`besta', gammak=`bestgammak', lambdak=`bestlambdak'" 
 nl mynlmodel: lnyy0 l_l0 k_k0 time_t0 t0 ///
 	,initial(pi `bestpi' sigma `bestsigma' gammal `bestgammal' a `besta' gammak `bestgammak'  lambdak `bestlambdak')  vce(r)
 
 	
-//test if sigma is significantly different from 1
+//Part5: test if sigma is significantly different from 1
 test (_b[sigma:_cons]=1)
 
