@@ -33,9 +33,9 @@ A= normalization constant.
 2.	Open the .do file in Stata. Then File>Open> choose the .dta file.
 3.	Push the execute (do) button in .do file.
 ## Outputs after the code is run
-1.	The first thing you should notice is the lowest SSR information shown on the screen. Also, you can see the estimation results as follows:
-![alt text]https://github.com/selenandic/initial-value-search/blob/master/Estimation%20Results.PNG
+1.	The first thing you should notice is the lowest SSR information shown on the screen. Also, you can see the estimation results.
+![alt text](https://github.com/selenandic/initial-value-search/blob/master/Estimation%20Results.PNG)
 2.	Here, for my imaginary economy, I find that the elasticity is estimated as 0.25 and significantly below unity. So, L and K are complements. The capital’s share in national income is found as 0.43. The long-run growth in labor productivity is close to 1 percent, while that of capital is -0.1 percent. λ<sub>K</sub> is estimated to be negative. Hence, ɣ<sub>K</sub> and λ<sub>K</sub> signal that capital’s productivity decreases at a decreasing rate.
-References:
+### References
 Leon-Ledesma, M. A, McAdam, P. and A. Willman. 2010. Identifying the elasticity of substitution with biased technical change. American Economic Review Vol.100 (4), 1330-57.
 
