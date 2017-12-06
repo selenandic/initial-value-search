@@ -4,7 +4,7 @@
 3.	I have benefited from the discussion in the Stata forum https://www.stata.com/statalist/archive/2005-07/msg00485.html
 4.	I have written this code using Stata 13 on 6/12/2017.
 ## Estimation Framework
-1.	The estimated model is a non-linear constant elasticity of substitution (CES) production function, which defines the productivity of inputs , i.e., g<sub>i</sub>(t) where i=L,K, as a Box-Cox transformation as in Leon-Ledesma et al. (2009):
+1.	The estimated model is a non-linear constant elasticity of substitution (CES) production function, which defines the productivity of inputs , i.e., g<sub>i</sub>(t) where i=L,K, as a Box-Cox transformation as in Leon-Ledesma et al. (2010):
 ![alt text]( https://github.com/selenandic/initial-value-search/blob/master/Equation_CES.PNG)
 2.	Variables of the model:
  Y=Real output,
@@ -29,13 +29,13 @@ A= normalization constant.
 5.	In part 4, the code estimates the model using the combination of initials that gives the minimum SSR. Here, I do not indicate any max number for iteration.
 6.	The last part of the code is a hypothesis test for σ=1, i.e., whether the function is significantly different form the Cobb-Douglas or not.
 ## How the code is run
-1.	Download the code and data file I have provided in this repo to your compute.
+1.	Download the code and data file I have provided in this repo to your computer.
 2.	Open the .do file in Stata. Then File>Open> choose the .dta file.
-3.	Push the   button in .do file.
+3.	Push the execute (do) button in .do file.
 ## Outputs after the code is run
 1.	The first thing you should notice is the lowest SSR information shown on the screen. Also, you can see the estimation results as follows:
- 
-…
- 
-
+![alt text]https://github.com/selenandic/initial-value-search/blob/master/Estimation%20Results.PNG
+2.	Here, for my imaginary economy, I find that the elasticity is estimated as 0.25 and significantly below unity. So, L and K are complements. The capital’s share in national income is found as 0.43. The long-run growth in labor productivity is close to 1 percent, while that of capital is -0.1 percent. λ<sub>K</sub> is estimated to be negative. Hence, ɣ<sub>K</sub> and λ<sub>K</sub> signal that capital’s productivity decreases at a decreasing rate.
+References:
+Leon-Ledesma, M. A, McAdam, P. and A. Willman. 2010. Identifying the elasticity of substitution with biased technical change. American Economic Review Vol.100 (4), 1330-57.
 
