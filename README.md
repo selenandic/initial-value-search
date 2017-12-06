@@ -25,8 +25,8 @@ A= normalization constant.
 1.	The program for the above model is called “nlmynlmodel”. I defined two locals; one for labor part and one for capital part in the CES function, and I labeled their sum as “term2”.
 2.	As the CES is non-linear “nl” command is used for the estimation.
 3.	Next, in Part 2, I determined the vectors of possible initial values for parameters. For instance, for σ I used a range from 0.5 to 1.2, including 7 different values. 
-4.	In part 3, the code tries all possible combinations of initials and computes the SSR of the model. I have declared the maximum number of iteration as 1 in this part. If you change this number (or if you completely delete it), the computation will get longer. However, be aware that the selected initials can change depending on the number of iterations. 
-5.	In part 4, the code estimates the model using the combination of initials that gives the minimum SSR. Here, I do not indicate any max number for iteration.
+4.	In Part 3, the code tries all possible combinations of initials and computes the SSR of the model. I have declared the maximum number of iteration as 1 in this part. If you change this number (or if you completely delete it), the computation will get longer. However, be aware that the selected initials can change depending on the number of iterations. 
+5.	In Part 4, the code estimates the model using the combination of initials that gives the minimum SSR. Here, I do not indicate any max number for iteration.
 6.	The last part of the code is a hypothesis test for σ=1, i.e., whether the function is significantly different form the Cobb-Douglas or not.
 ## How the code is run
 1.	Download the code and data file I have provided in this repo to your computer.
