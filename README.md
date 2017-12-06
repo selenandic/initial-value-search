@@ -13,7 +13,7 @@
  Y_bar=geometric mean of Y,
 L_bar=geometric mean of L,
  K_bar=geometric mean of K,
- t_var=average of t (time) ,
+ t_bar=average of t (time) ,
 3.	Parameters of the model;
 σ= elasticity of substitution between labor L and K,
 π= share of capital in national income,
