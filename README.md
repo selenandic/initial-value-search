@@ -12,8 +12,8 @@ A grid search code for initial values in non-linear estimations
 ![alt text]( https://github.com/selenandic/initial-value-search/blob/master/Equation_CES.PNG)
 2.	Here there are six parameters to estimate;
 
-\sigma  = elasticity of substitution between labor (L) and capital (K)
-\pi = share of capital in national income
-\gamma  =
+\sigma<tab>= elasticity of substitution between labor (L) and capital (K)
+\pi<tab>= share of capital in national income
+\gamma<tab>=
 
 
